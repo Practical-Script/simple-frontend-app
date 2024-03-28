@@ -4,7 +4,7 @@ COPY public/ ./public
 COPY src/ ./src
 COPY package*.json tsconfig.json tsconfig.node.json index.html ./
 RUN npm install
-RUN npm run builder
+RUN npm run build
 
 FROM nginx:latest
 WORKDIR /app
