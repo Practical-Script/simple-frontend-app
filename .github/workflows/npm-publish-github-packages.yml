@@ -16,5 +16,5 @@ jobs:
     - name: Deply to Github Container Registry
       run: |
         docker login --username ${{ secrets.GHCR_USERNAME }} --password ${{ secrets.GHCR_TOKEN }} ghcr.io
-        docker build . --tag ghcr.io/${{ secrets.GHCR_USERNAME }}/YOUR_PROJECT_NAME:latest
+        docker build . --tag ghcr.io/${{ secrets.GHCR_USERNAME }}/simple-frontend-app:latest
         docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/simple-frontend-app:latest
