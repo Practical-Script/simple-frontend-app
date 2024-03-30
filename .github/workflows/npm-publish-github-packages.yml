@@ -15,6 +15,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Deply to Github Container Registry
       run: |
-        docker login --username ${{ vars.GHCR_USERNAME }} --password ${{ secrets.GHCR_TOKEN }} ghcr.io
-        docker build . --tag ghcr.io/${{ vars.GHCR_USERNAME }}/simple-frontend-app:latest
-        docker push ghcr.io/${{ vars.GHCR_USERNAME }}/simple-frontend-app:latest
+        docker login --username ${{ vars.HUB_USERNAME }} --password ${{ secrets.HUB_PWD }}
+        docker build . --tag ${{ vars.HUB_USERNAME }}/simple-frontend-app:latest
+        docker push ${{ vars.HUB_USERNAME }}/simple-frontend-app:latest
